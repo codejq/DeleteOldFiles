@@ -11,10 +11,10 @@ int fileCount = 0;
 void deleteOldFilesL(string path, chrono::system_clock::time_point olderThanDate, string recurseornot)
 {
     directory_iterator end_itr;
-    cout << path << " 1010ccccccccccceeeeeee deleted" << endl;
+    
     for (directory_iterator itr(path); itr != end_itr; ++itr)
     {
-        cout << " vvvvvvccccccccccceeeeeee deleted" << endl;
+        
         
         if (is_directory(itr->status()) && recurseornot == "yes")
         {
@@ -75,14 +75,7 @@ int main(int argc, char* argv[])
     }
     else
     {
-        cout << "===========================" << endl;
-        cout << "argv[2]" << endl;
-        cout << argv[2] << endl;
-        cout << "result" << endl;
-        cout << result << endl;
-        cout << "recurseornot" << endl;
-        cout << recurseornot << endl;
-        cout << "===========================" << endl;
+
         deleteOldFiles(argv[2], result, recurseornot);
         return 0;
     }
